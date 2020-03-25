@@ -1,20 +1,12 @@
 package com.example.pesoideal;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-
 import android.annotation.SuppressLint;
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,9 +16,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import java.io.Serializable;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+
 import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -156,472 +150,442 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         calculoImc();
         if (idade > 15) {
             if (resultado < 17) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Muito abaixo do peso");
                 setSharedPreferences();
+                notificacao();
             }
 
             if ((resultado >= 17) && (resultado <= 18.49)) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Abaixo do peso");
                 setSharedPreferences();
+                notificacao();
             }
             if ((resultado >= 18.5) && (resultado <= 24.99)) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Peso Normal");
                 setSharedPreferences();
+                notificacao();
             }
             if ((resultado >= 25) && (resultado <= 29.99)) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Acima do peso");
                 setSharedPreferences();
+                notificacao();
             }
             if ((resultado >= 30) && (resultado <= 34.99)) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Obesidade 1");
                 setSharedPreferences();
+                notificacao();
             }
             if ((resultado >= 35) && (resultado <= 39.99)) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Obesidade 2");
                 setSharedPreferences();
+                notificacao();
             }
             if (resultado > 40) {
-                notificacao();
                 txt_Resultado.setText(formato.format(resultado));
                 txt_Situacao.setText("Obesidade 3");
                 setSharedPreferences();
+                notificacao();
             }
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void imcMenina() {
-        calculoImc();
-        String idade;
-        if (mIdade.getText() != null) {
-            idade = mIdade.getText().toString();
-            switch (idade) {
-                case "6":
-                    if ((resultado == 14.3) && (resultado <= 16)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
+        int idade = Integer.parseInt(mIdade.getText().toString());
+        switch (idade) {
+            case 6:
+                calculoImc();
+                if ((resultado == 14.3) && (resultado <= 16)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 16.1) && (resultado <= 17.3)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 17.4) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 7:
+                calculoImc();
+                if ((resultado == 14.9) && (resultado <= 17)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 17.1) && (resultado <= 18.8)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 18.9) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
 
-                    if ((resultado > 16.1) && (resultado <= 17.3)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 17.4) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "7":
-                    if ((resultado == 14.9) && (resultado <= 17)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-
-                    if ((resultado > 17.1) && (resultado <= 18.8)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 18.9) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-
-                case "8":
-                    if ((resultado == 15.6) && (resultado <= 18)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-
-                    if ((resultado > 18.1) && (resultado <= 20.2)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 20.3) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "9":
-                    if ((resultado == 16.3) && (resultado <= 19)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 19.1) && (resultado <= 21.6)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 21.7) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "10":
-                    if ((resultado == 17) && (resultado <= 20)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 20.1) && (resultado <= 23.1)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 23.2) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "11":
-                    if ((resultado == 17.6) && (resultado <= 21)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 21.1) && (resultado <= 24.4)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 24.5) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "12":
-                    if ((resultado == 18.3) && (resultado <= 22)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 22.1) && (resultado <= 25.8)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 25.9) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "13":
-                    if ((resultado == 18.9) && (resultado <= 22.9)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 23) && (resultado <= 27.6)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 27.7) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "14":
-                    if ((resultado == 19.3) && (resultado <= 23.7)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 23.8) && (resultado <= 27.8)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 27.9) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-                case "15":
-                    if ((resultado == 19.6) && (resultado <= 23.7)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Normal");
-                        setSharedPreferences();
-                    }
-                    if ((resultado > 24.2) && (resultado <= 28.7)) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Sobrepeso");
-                        setSharedPreferences();
-                    }
-                    if (resultado > 28.8) {
-                        notificacao();
-                        txt_Resultado.setText(formato.format(resultado));
-                        txt_Situacao.setText("Obesidade");
-                        setSharedPreferences();
-                    }
-                    break;
-            }
+            case 8:
+                calculoImc();
+                if ((resultado == 15.6) && (resultado <= 18)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 18.1) && (resultado <= 20.2)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 20.3) {
+                    notificacao();
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 9:
+                calculoImc();
+                if ((resultado == 16.3) && (resultado <= 19)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 19.1) && (resultado <= 21.6)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 21.7) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 10:
+                calculoImc();
+                if ((resultado == 17) && (resultado <= 20)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 20.1) && (resultado <= 23.1)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 23.2) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 11:
+                calculoImc();
+                if ((resultado == 17.6) && (resultado <= 21)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 21.1) && (resultado <= 24.4)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 24.5) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 12:
+                calculoImc();
+                if ((resultado == 18.3) && (resultado <= 22)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 22.1) && (resultado <= 25.8)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 25.9) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 13:
+                calculoImc();
+                if ((resultado == 18.9) && (resultado <= 22.9)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 23) && (resultado <= 27.6)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 27.7) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 14:
+                calculoImc();
+                if ((resultado == 19.3) && (resultado <= 23.7)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 23.8) && (resultado <= 27.8)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 27.9) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
+            case 15:
+                calculoImc();
+                if ((resultado == 19.6) && (resultado <= 23.7)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Normal");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado > 24.2) && (resultado <= 28.7)) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Sobrepeso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if (resultado > 28.8) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Obesidade");
+                    setSharedPreferences();
+                    notificacao();
+                }
+                break;
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void imcMenino() {
         int idade = Integer.parseInt(mIdade.getText().toString());
-        calculoImc();
         switch (idade) {
             case 6:
+                calculoImc();
                 if ((resultado == 14.5) && (resultado <= 16.5)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-
-                if ((resultado > 16.6) && (resultado <= 17.9)) {
                     notificacao();
+                } else if ((resultado > 16.6) && (resultado <= 17.9)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 18) {
                     notificacao();
+                } else if (resultado > 18) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 7:
+                calculoImc();
                 if ((resultado == 15) && (resultado <= 17.2)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-
-                if ((resultado > 17.3) && (resultado <= 19)) {
                     notificacao();
+                } else if ((resultado > 17.3) && (resultado <= 19)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 19.1) {
                     notificacao();
+                } else if (resultado > 19.1) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 8:
+                calculoImc();
                 if ((resultado == 15.6) && (resultado <= 16.6)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-
-                if ((resultado > 16.7) && (resultado <= 20.2)) {
                     notificacao();
+                } else if ((resultado > 16.7) && (resultado <= 20.2)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 20.3) {
                     notificacao();
+                } else if (resultado > 20.3) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 9:
+                calculoImc();
                 if ((resultado == 16.1) && (resultado <= 18.7)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 18.8) && (resultado <= 21.3)) {
                     notificacao();
+                } else if ((resultado > 18.8) && (resultado <= 21.3)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 21.4) {
                     notificacao();
+                } else if (resultado > 21.4) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 10:
+                calculoImc();
                 if ((resultado == 16.7) && (resultado <= 19.5)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 19.6) && (resultado <= 22.4)) {
                     notificacao();
+                } else if ((resultado > 19.6) && (resultado <= 22.4)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 22.5) {
                     notificacao();
+                } else if (resultado > 22.5) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 11:
+                calculoImc();
                 if ((resultado == 17.2) && (resultado <= 20.2)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado >= 20.3) && (resultado <= 23.6)) {
                     notificacao();
+                } else if ((resultado >= 20.3) && (resultado <= 23.6)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 23.7) {
                     notificacao();
+                } else if (resultado > 23.7) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 12:
+                calculoImc();
                 if ((resultado == 17.8) && (resultado <= 21)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 21.1) && (resultado <= 25.8)) {
                     notificacao();
+                } else if ((resultado > 21.1) && (resultado <= 25.8)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 25.9) {
                     notificacao();
+                } else if (resultado > 25.9) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 13:
+                calculoImc();
                 if ((resultado == 18.5) && (resultado <= 21.8)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 21.9) && (resultado <= 25.8)) {
                     notificacao();
+                } else if ((resultado > 21.9) && (resultado <= 25.8)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 25.9) {
                     notificacao();
+                } else if (resultado > 25.9) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 14:
+                calculoImc();
                 if ((resultado == 19.2) && (resultado <= 22.6)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 22.7) && (resultado <= 26.8)) {
                     notificacao();
+                } else if ((resultado > 22.7) && (resultado <= 26.8)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 26.9) {
                     notificacao();
+                } else if (resultado > 26.9) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
             case 15:
+                calculoImc();
                 if ((resultado == 19.9) && (resultado <= 23.5)) {
-                    notificacao();
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
-                }
-                if ((resultado > 23.7) && (resultado <= 27.6)) {
                     notificacao();
+                } else if ((resultado > 23.7) && (resultado <= 27.6)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
-                }
-                if (resultado > 27.7) {
                     notificacao();
+                } else if (resultado > 27.7) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Obesidade");
                     setSharedPreferences();
+                    notificacao();
                 }
                 break;
         }
