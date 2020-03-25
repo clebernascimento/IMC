@@ -201,7 +201,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (idade) {
             case 6:
                 calculoImc();
-                if ((resultado == 14.3) && (resultado <= 16)) {
+                if ((resultado <= 14.3) && (resultado <= 16)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -400,7 +400,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (idade) {
             case 6:
                 calculoImc();
-                if ((resultado == 14.5) && (resultado <= 16.5)) {
+                if ((resultado <= 14.5) && (resultado <= 16.5)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
