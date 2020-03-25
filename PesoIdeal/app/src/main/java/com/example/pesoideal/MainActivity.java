@@ -201,7 +201,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (idade) {
             case 6:
                 calculoImc();
-                if ((resultado <= 14.3) && (resultado <= 16)) {
+                if (resultado < 14.3) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 14.3) && (resultado <= 16)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -220,7 +225,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 7:
                 calculoImc();
-                if ((resultado == 14.9) && (resultado <= 17)) {
+                if (resultado < 14.9) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 14.9) && (resultado <= 17)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -240,7 +250,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case 8:
                 calculoImc();
-                if ((resultado == 15.6) && (resultado <= 18)) {
+                if (resultado < 15.6) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 15.6) && (resultado <= 18)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -260,7 +275,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 9:
                 calculoImc();
-                if ((resultado == 16.3) && (resultado <= 19)) {
+                if (resultado < 16.3) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 16.3) && (resultado <= 19)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -279,7 +299,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 10:
                 calculoImc();
-                if ((resultado == 17) && (resultado <= 20)) {
+                if (resultado < 17) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 17) && (resultado <= 20)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -298,7 +323,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 11:
                 calculoImc();
-                if ((resultado == 17.6) && (resultado <= 21)) {
+                if (resultado < 17.6) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 17.6) && (resultado <= 21)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -317,7 +347,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 12:
                 calculoImc();
-                if ((resultado == 18.3) && (resultado <= 22)) {
+                if (resultado < 18.3) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 18.3) && (resultado <= 22)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -336,7 +371,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 13:
                 calculoImc();
-                if ((resultado == 18.9) && (resultado <= 22.9)) {
+                if (resultado < 18.9) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 18.9) && (resultado <= 22.9)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -355,7 +395,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 14:
                 calculoImc();
-                if ((resultado == 19.3) && (resultado <= 23.7)) {
+                if (resultado < 19.3) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 19.3) && (resultado <= 23.7)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -374,7 +419,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 15:
                 calculoImc();
-                if ((resultado == 19.6) && (resultado <= 23.7)) {
+                if (resultado < 19.6) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 19.6) && (resultado <= 23.7)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -400,7 +450,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (idade) {
             case 6:
                 calculoImc();
-                if ((resultado <= 14.5) && (resultado <= 16.5)) {
+                if (resultado < 14.5) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado <= 14.5) && (resultado <= 16.5)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -419,7 +474,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 7:
                 calculoImc();
-                if ((resultado == 15) && (resultado <= 17.2)) {
+                if (resultado < 15) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 15) && (resultado <= 17.2)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -438,7 +498,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 8:
                 calculoImc();
-                if ((resultado == 15.6) && (resultado <= 16.6)) {
+                if (resultado < 15.6) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 15.6) && (resultado <= 16.6)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -457,12 +522,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 9:
                 calculoImc();
-                if ((resultado == 16.1) && (resultado <= 18.7)) {
+                if (resultado < 16.1) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 16.1) && (resultado <= 18.8)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
                     notificacao();
-                } else if ((resultado > 18.8) && (resultado <= 21.3)) {
+                } else if ((resultado > 18.8) && (resultado <= 21.4)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
@@ -476,7 +546,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 10:
                 calculoImc();
-                if ((resultado == 16.7) && (resultado <= 19.5)) {
+                if (resultado < 16.7) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 16.7) && (resultado <= 19.5)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -495,7 +570,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 11:
                 calculoImc();
-                if ((resultado == 17.2) && (resultado <= 20.2)) {
+                if (resultado < 17.2) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 17.2) && (resultado <= 20.2)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -514,7 +594,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 12:
                 calculoImc();
-                if ((resultado == 17.8) && (resultado <= 21)) {
+                if (resultado < 17.8) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 17.8) && (resultado <= 21)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -533,7 +618,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 13:
                 calculoImc();
-                if ((resultado == 18.5) && (resultado <= 21.8)) {
+                if (resultado < 18.5) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 18.5) && (resultado <= 21.8)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -552,7 +642,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 14:
                 calculoImc();
-                if ((resultado == 19.2) && (resultado <= 22.6)) {
+                if (resultado < 19.2) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 19.2) && (resultado <= 22.6)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
@@ -571,7 +666,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 15:
                 calculoImc();
-                if ((resultado == 19.9) && (resultado <= 23.5)) {
+                if (resultado < 19.95) {
+                    txt_Resultado.setText(formato.format(resultado));
+                    txt_Situacao.setText("Abaixo do peso");
+                    setSharedPreferences();
+                    notificacao();
+                } else if ((resultado == 19.9) && (resultado <= 23.5)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
