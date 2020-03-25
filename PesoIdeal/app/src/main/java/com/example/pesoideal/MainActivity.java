@@ -76,16 +76,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mCalcular.setOnClickListener(this);
 
         radioGroup = findViewById(R.id.radioGroup);
-//        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(RadioGroup group, int checkedId) {
-//                if (checkedId == R.id.radio_Mulher) {
-//
-//                } else if (checkedId == R.id.radio_Homem) {
-//
-//                }
-//            }
-//        });
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -280,12 +270,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     txt_Situacao.setText("Abaixo do peso");
                     setSharedPreferences();
                     notificacao();
-                } else if ((resultado == 16.3) && (resultado <= 19)) {
+                } else if ((resultado == 16.3) && (resultado <= 19.1)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Normal");
                     setSharedPreferences();
                     notificacao();
-                } else if ((resultado > 19.1) && (resultado <= 21.6)) {
+                } else if ((resultado > 19.1) && (resultado <= 21.7)) {
                     txt_Resultado.setText(formato.format(resultado));
                     txt_Situacao.setText("Sobrepeso");
                     setSharedPreferences();
