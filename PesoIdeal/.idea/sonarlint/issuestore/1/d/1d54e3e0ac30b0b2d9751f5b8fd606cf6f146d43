@@ -1,33 +1,31 @@
 
-p
-java:S1450!"URemove the "menina" field and declare it as a local variable in the relevant methods.(öİÃûøÿÿÿÿ
-u
-java:S3776”"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(›íÓÅøÿÿÿÿ8Á¥¤÷.
+f
+java:S1192É"HDefine a constant instead of duplicating this literal "Normal" 20 times.(Øìµ8ªµÎø.
 p
 java:S1450""URemove the "menino" field and declare it as a local variable in the relevant methods.(»‰°áûÿÿÿÿ
 m	java:S116'"XRename this field "txt_Resultado" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦äÄ×
-V	java:S125Q"<This block of commented-out lines of code should be removed.(«óöıÿÿÿÿ
-V	java:S125V"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-r	java:S117p"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä‡›øÿÿÿÿ8Á¥¤÷.
-7	java:S131`""Add a default case to this switch.(ºÖ
+l	java:S116)"WRename this field "txt_Situacao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÊÀó
+?	java:S131¸""Add a default case to this switch.(†¡òü8ªµÎø.
+a
+java:S1301V"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ
+n
+java:S1192Ó"KDefine a constant instead of duplicating this literal "Obesidade" 20 times.(¸´¨Ìÿÿÿÿÿ8ªµÎø.
+o
+java:S3776¶"RRefactor this method to reduce its Cognitive Complexity from 71 to the 15 allowed.(Éï˜8ªµÎø.
 n
 java:S1450%"XRemove the "mCalcular" field and declare it as a local variable in the relevant methods.(Êÿ‚ö
-V	java:S125T"<This block of commented-out lines of code should be removed.(’¹ú²ûÿÿÿÿ
-l	java:S116)"WRename this field "txt_Situacao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ÊÀó
-V	java:S125O"<This block of commented-out lines of code should be removed.(®À¹œşÿÿÿÿ
-a
-java:S1301`"KReplace this "switch" statement by "if" statements to increase readability.(ºÖ
 k
 java:S1450#"URemove the "adulto" field and declare it as a local variable in the relevant methods.(¬´§°
-n
-java:S1192Ø"KDefine a constant instead of duplicating this literal "Obesidade" 20 times.(¸´¨Ìÿÿÿÿÿ8ªµÎø.
-f
-java:S1192Î"HDefine a constant instead of duplicating this literal "Normal" 20 times.(Øìµ8ªµÎø.
-i
-java:S1192Ó"KDefine a constant instead of duplicating this literal "Sobrepeso" 20 times.(ÎŒ¡À8ªµÎø.
 u
-java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(òÓ´ßşÿÿÿÿ8ªµÎø.
-?	java:S131É""Add a default case to this switch.(†¡òü8ªµÎø.
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 61 to the 15 allowed.(Éï˜8ªµÎø.
-?	java:S131""Add a default case to this switch.(†¡òü8ªµÎø.
+java:S3776Š"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(›íÓÅøÿÿÿÿ8Á¥¤÷.
+?	java:S131¿""Add a default case to this switch.(†¡òü8ªµÎø.
+u
+java:S3776½"RRefactor this method to reduce its Cognitive Complexity from 71 to the 15 allowed.(òÓ´ßşÿÿÿÿ8ªµÎø.
+n
+java:S1192—"PDefine a constant instead of duplicating this literal "Abaixo do peso" 21 times.(Öğ”ï8˜ØŞ›‘.
+r	java:S117f"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ä‡›øÿÿÿÿ8Á¥¤÷.
+i
+java:S1192Î"KDefine a constant instead of duplicating this literal "Sobrepeso" 20 times.(ÎŒ¡À8ªµÎø.
+7	java:S131V""Add a default case to this switch.(ºÖ
+p
+java:S1450!"URemove the "menina" field and declare it as a local variable in the relevant methods.(öİÃûøÿÿÿÿ

@@ -1,12 +1,12 @@
 
+H
+java:S1128"3Remove this unused import 'android.content.Intent'.(³ğ‹G
+n	java:S116"TRename this field "txt_valor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÄ¿äøÿÿÿÿ
 ^
 java:S1128
 "ARemove this unused import 'android.preference.PreferenceManager'.(ìùÖõ8ÛÛı÷.
-n	java:S116"TRename this field "txt_valor" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÖÄ¿äøÿÿÿÿ
 q	java:S116"WRename this field "txt_situacao" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£ôÖ«úÿÿÿÿ
-s
-java:S1450"XRemove the "txt_valor" field and declare it as a local variable in the relevant methods.(ÖÄ¿äøÿÿÿÿ
 v
 java:S1450"[Remove the "txt_situacao" field and declare it as a local variable in the relevant methods.(£ôÖ«úÿÿÿÿ
-H
-java:S1128"3Remove this unused import 'android.content.Intent'.(³ğ‹G
+s
+java:S1450"XRemove the "txt_valor" field and declare it as a local variable in the relevant methods.(ÖÄ¿äøÿÿÿÿ
